@@ -5,15 +5,15 @@ const ExpressError = require("../expressError");
 const router = express.Router();
 const db = require("../db");
 
-router.get("/", function (req, res, next) {
-  try {
-    const results = db.query(`SELECT * FROM users`);
+// router.get("/", async function (req, res, next) {
+//   try {
+//     const results = await db.query(`SELECT * FROM users`);
 
-    return res.json(results.rows);
-  } catch (e) {
-    return next(e);
-  }
-});
+//     return res.json(results.rows);
+//   } catch (e) {
+//     return next(e);
+//   }
+// });
 
 router.get("/:id", async (req, res, next) => {
   try {
@@ -70,9 +70,7 @@ router.patch("/:id", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
   try {
-    const results = db.query("DELETE FROM users WHERE id = $1", [
-      req.params.id,
-    ]);
+    db.query("DELETE FROM users WHERE id = $1", [req.params.id]);
     return res.send({ msg: "DELETED!" });
   } catch (e) {
     return next(e);

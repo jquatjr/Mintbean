@@ -7,6 +7,7 @@ const ExpressError = require("./expressError");
 app.use(express.json());
 
 const uRoutes = require("./routes/users");
+
 app.use("/users", uRoutes);
 
 /** 404 handler */
