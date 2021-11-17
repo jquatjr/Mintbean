@@ -7,8 +7,10 @@ const ExpressError = require("./expressError");
 app.use(express.json());
 
 const uRoutes = require("./routes/users");
+const cRoutes = require("./routes/colorings");
 
 app.use("/users", uRoutes);
+app.use("/colorings", cRoutes);
 
 /** 404 handler */
 
