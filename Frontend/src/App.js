@@ -30,12 +30,12 @@ function App() {
 				toggleLogin={toggleLoginModal}
 				toggleRegister={toggleRegisterModal}
 			/>
-			<Modal open={isOpenLogin} onClose={toggleLoginModal}>
+			<Modal className="App-modal" open={isOpenLogin} onClose={toggleLoginModal}>
 				<div>
-					<LoginForm toggle={toggleLoginModal} />
+					<LoginForm toggle={toggleLoginModal} notify={notifyLoginSuccess} />
 				</div>
 			</Modal>
-			<Modal open={isOpenRegister} onClose={toggleRegisterModal}>
+			<Modal className="App-modal" open={isOpenRegister} onClose={toggleRegisterModal}>
 				<div>
 					<RegistrationForm toggle={toggleRegisterModal} notify={notifyRegisterSuccess} />
 				</div>
