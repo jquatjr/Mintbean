@@ -17,8 +17,8 @@ export default function ColoringPage(){
        
     }
     return (
-        <Box sx={{display: 'flex', paddingTop: '3rem'}}>
-        <Paper sx={{width: "60%", height: "80vh", margin: '1rem'}}>
+        <Box sx={{display: 'flex', paddingTop: '3rem', height:"100vh"}}>
+        <Paper sx={{width: "60%", position:"relative", margin: '0 1rem 0 1rem', padding:"2rem"}}>
         <SVG name={picture} currentColor={currentColor} />
         </Paper>
         <Box sx={{width:"25%", height:"100vh", margin:"1rem"}}>
