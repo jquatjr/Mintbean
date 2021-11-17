@@ -1,18 +1,6 @@
-const { Client } = require("pg");
+const pg = require("pg");
 
-let DB_URI;
-
-// If we're running in test "mode", use our test db
-// Make sure to create both databases!
-if (process.env.NODE_ENV === "test") {
-  DB_URI = "postgresql:///colorings-test";
-} else {
-  DB_URI = "postgresql:///colorings";
-}
-
-let db = new Client({
-  connectionString: DB_URI
-});
+const db = new pg.Client("postgresql:///colorings_db");
 
 db.connect();
 
