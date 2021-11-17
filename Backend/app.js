@@ -2,12 +2,11 @@
 const express = require("express");
 const app = express();
 const ExpressError = require("./expressError");
+const uRoutes = require("./routes/users");
+const cRoutes = require("./routes/colorings");
 
 // Parse request bodies for JSON
 app.use(express.json());
-
-const uRoutes = require("./routes/users");
-const cRoutes = require("./routes/colorings");
 
 app.use("/users", uRoutes);
 app.use("/colorings", cRoutes);
@@ -34,4 +33,7 @@ app.use(function (err, req, res, next) {
     },
   });
 });
-module.exports = app;
+
+app.listen(3000, function () {
+  console.log("listening on 3000");
+});

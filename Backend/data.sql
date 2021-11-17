@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS colorings;
+DROP DATABASE IF EXISTS colorings_db;
 
-CREATE DATABASE colorings;
+CREATE DATABASE colorings_db;
 
-\c colorings;
+\c colorings_db;
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS colorings;
@@ -15,8 +15,11 @@ CREATE TABLE "users" (
 
 CREATE TABLE "colorings" (
   "id" SERIAL PRIMARY KEY,
-  "coloring" xml,
+  "name" text,
+  "image" xml,
   "user_id" int
 );
 
-ALTER TABLE "colorings" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+ALTER TABLE "colorings" 
+ADD FOREIGN KEY ("user_id") 
+REFERENCES "users" ("id") ON DELETE CASCADE;
