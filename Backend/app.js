@@ -1,13 +1,14 @@
 /** Express app for Coloring Book. */
 const express = require("express");
 const app = express();
+const cors = require('cors')
 const ExpressError = require("./expressError");
 const uRoutes = require("./routes/users");
 const cRoutes = require("./routes/colorings");
 
 // Parse request bodies for JSON
 app.use(express.json());
-
+app.use(cors())
 app.use("/users", uRoutes);
 app.use("/colorings", cRoutes);
 
@@ -35,5 +36,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(3001, function () {
-  console.log("listening on 3000");
+  console.log("listening on 3001");
 });

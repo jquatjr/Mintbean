@@ -27,9 +27,10 @@ router.get("/:username", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
+   
     const { username, password } = req.body;
     const user = await User.register(username, password);
-
+    
     return res.json(user);
   } catch (e) {
     return next(e);

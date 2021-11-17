@@ -1,9 +1,4 @@
-.navbar{
-    position: fixed;
-    width:100%;
-    transition: background-color 1s;
-  
-  }
+
   
   
 .Navbar-link:hover {
@@ -13,4 +8,5 @@
 .Navbar {
   background-color: rgb(83, 117, 146);
   position: fixed; 
+  z-index: 1; 
 }
