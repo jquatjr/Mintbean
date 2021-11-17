@@ -8,7 +8,6 @@ const SVG = ({ name, width="100%", height="100%", currentColor, fillColor }) => 
     const svgRef = useRef(null)
     const filename = "mycreation.svg"
     const ImportedIconRef = useRef(null);
-    console.log("SVG",svgRef.current)
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);

@@ -3,21 +3,28 @@ import {Box, Typography, Paper} from '@mui/material'
 import {SketchPicker} from 'react-color'
 import '../styles/ColoringPage.css'
 import SVG from "./SVG"
+import PictureSelect from './PictureSelect'
 export default function ColoringPage(){
     const [currentColor, setCurrentColor] = useState("white")
+    const [picture, setPicture] = useState("octopus")
+    const availablePics = ["octopus", "birds", "dora", "flower"]
+    const handlePictureChange = (e)=> {
+        setPicture(e.target.value)
+    
+    }
     const handleChangeColor = (color) => {
         setCurrentColor(color.hex)
        
     }
-    
     return (
-        <Box sx={{display: 'flex'}}>
+        <Box sx={{display: 'flex', paddingTop: '3rem'}}>
         <Paper sx={{width: "60%", height: "95vh", margin: '1rem'}}>
-        <SVG name={"octopus"} currentColor={currentColor} />
+        <SVG name={picture} currentColor={currentColor} />
         </Paper>
-        <Box sx={{width:"25%", height:"100vh", margin:"2rem"}}>
+        <Box sx={{width:"25%", height:"100vh", margin:"1rem"}}>
             color selector
             <SketchPicker className="ColoringPage-sketch" width="100%"  disableAlpha={true} color={currentColor} onChangeComplete={handleChangeColor} />
+            <PictureSelect picture={picture} handlePictureChange={handlePictureChange} availablePics={availablePics}/> 
         </Box>
 
         </Box>
