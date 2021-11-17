@@ -13,13 +13,9 @@
     "react": "^17.0.2",
     "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD:package.json
-    "react-scripts": "^4.0.3",
-=======
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "save-svg-as-png": "^1.4.17",
->>>>>>> a5998b4c94450f243a7b668bd3ce8325c7a2161b:Frontend/package.json
     "web-vitals": "^1.1.2"
   },
   "scripts": {
