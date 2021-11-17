@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import UserRoutes from './components/UserRoutes';
 function App() {
   return (
     <div className="App">
-      
+      <UserRoutes/>
     </div>
   );
 }
