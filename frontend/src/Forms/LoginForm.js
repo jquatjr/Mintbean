@@ -50,12 +50,12 @@ function LoginForm({ toggle, notify }) {
 							try {
 								let res = await dispatch(
 									getUserFromAPI(
-										values.username,
-										values.password
+										values
 									)
 								);
 
 								if (res.username) {
+									console.log(res)
 									toggle();
 									notify(res.username)
 								}

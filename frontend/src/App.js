@@ -22,6 +22,9 @@ function App() {
   const notifyLoginSuccess = (username) => toast.success(`Welcome Back, ${username}!`, {
     position: toast.POSITION.TOP_CENTER
   })
+  const notifyLogoutSuccess = () => toast.success("You have successfully logged out", {
+    position: toast.POSITION.TOP_CENTER
+  })
   const notifyRegisterSuccess = (username) => toast.success(`Welcome, ${username}!`)
 	return (
 		<div className="App">
@@ -29,6 +32,7 @@ function App() {
 			<Navbar
 				toggleLogin={toggleLoginModal}
 				toggleRegister={toggleRegisterModal}
+				notify={notifyLogoutSuccess}
 			/>
 			<Modal className="App-modal" open={isOpenLogin} onClose={toggleLoginModal}>
 				<div>

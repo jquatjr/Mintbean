@@ -2,13 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/Navbar.css';
 import { Box, Typography, AppBar, Button, Toolbar } from '@mui/material';
-export default function Navbar({ toggleLogin, toggleRegister }) {
+export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const user = useSelector((store) => store.userReducer.user);
 	const logout = () => {
 		dispatch({ type: 'LOGOUT' });
-
+		notify()
 		navigate('/');
 	};
 	const loginButtons = (

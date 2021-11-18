@@ -10,18 +10,18 @@ function getUser(username) {
 	};
 }
 
-export function getUserFromAPI(username, password) {
+export function getUserFromAPI(data) {
 	return async function(dispatch) {
 		const response = await axios({
 			method : 'post',
-			url    : `${BASE_URL}/users`,
+			url    : `${BASE_URL}/users/login`,
 			data   : {
-				username : `${username}`,
-				password : `${password}`
+				username : `${data.username}`,
+				password : `${data.password}`
 			}
 		});
-		console.log(response);
-		return dispatch(getUser(response.data, username));
+		
+		return dispatch(getUser(response.data.username));
 	};
 }
 
