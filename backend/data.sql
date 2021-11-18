@@ -16,7 +16,7 @@ CREATE TABLE "users" (
 CREATE TABLE "colorings" (
   "id" SERIAL PRIMARY KEY,
   "name" text,
-  "image" xml,
+  "image" text,
   "user_id" int
 );
 

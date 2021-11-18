@@ -3,10 +3,10 @@ import { GET_USER } from './types';
 
 const BASE_URL = 'http://localhost:9000';
 
-function getUser(username) {
+function getUser(username, id) {
 	return {
 		type     : GET_USER,
-		username
+		username, id
 	};
 }
 
@@ -20,8 +20,8 @@ export function getUserFromAPI(data) {
 				password : `${data.password}`
 			}
 		});
-
-		return dispatch(getUser(response.data.username));
+		
+		return dispatch(getUser(response.data.username, response.data.id));
 	};
 }
 
@@ -40,7 +40,19 @@ export function registerUser(data) {
 		return dispatch(getUser(response.data.username));
 	};
 }
-
+export async function getColoringsFromAPI(name, image, userId) {
+		const response = await axios({
+			method : 'post',
+			url    : `${BASE_URL}/colorings`,
+			data   : {
+				name : name,
+				image : image, 
+				user_id: userId
+			}
+		});
+		return response.data
+	
+}
 // function getPost(post) {
 //     return {
 //         // type: GET_POST,

@@ -61,11 +61,7 @@ const SVG = ({
 							Download
 						</Button>
 						{/* TODO: add functionality for save button */}
-						{user ? 
-						<Button variant="contained">
-							Save
-						</Button> 
-						: null}		
+							
 					</Box>
 				</Box>
 			</Box>
