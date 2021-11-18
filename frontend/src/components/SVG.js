@@ -6,10 +6,7 @@ import 'external-svg-loader';
 import '../styles/SVG.css';
 const SVG = ({
 	name,
-	width = '100%',
-	height = '100%',
-	currentColor,
-	fillColor
+	currentColor
 }) => {
 	const svgRef = useRef(null);
 	const filename = 'mycreation.svg';
