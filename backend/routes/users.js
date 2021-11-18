@@ -27,13 +27,22 @@ router.get("/:username", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-   
     const { username, password } = req.body;
     const user = await User.register(username, password);
-    
+
     return res.json(user);
   } catch (e) {
     return next(e);
+  }
+});
+
+router.post("/login", async function (req, res, next) {
+  try {
+    let { username, password } = req.body;
+    const user = await User.authenticate(username, password);
+    return res.json(user);
+  } catch (err) {
+    return next(err);
   }
 });
 
