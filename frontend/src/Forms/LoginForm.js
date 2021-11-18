@@ -28,12 +28,9 @@ function LoginForm({ toggle, notify }) {
 		toast.error('Sorry, incorrect login information', {
 			position : toast.POSITION.TOP_RIGHT
 		});
-	
 
 	return (
-		<div 
-        
-        style={{ textAlign: 'center' }}>
+		<div style={{ textAlign: 'center' }}>
 			<ToastContainer autoClose={2000} hideProgressBar={true} />
 			<Card sx={{ margin: 'auto' }}>
 				<CardContent>
@@ -49,15 +46,13 @@ function LoginForm({ toggle, notify }) {
 						onSubmit={async (values) => {
 							try {
 								let res = await dispatch(
-									getUserFromAPI(
-										values
-									)
+									getUserFromAPI(values)
 								);
 
 								if (res.username) {
-									console.log(res)
+									//** not navigating here to save any progress in picture */
 									toggle();
-									notify(res.username)
+									notify(res.username);
 								}
 							} catch (err) {
 								console.log(err);

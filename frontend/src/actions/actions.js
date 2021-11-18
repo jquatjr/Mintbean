@@ -20,7 +20,7 @@ export function getUserFromAPI(data) {
 				password : `${data.password}`
 			}
 		});
-		
+
 		return dispatch(getUser(response.data.username));
 	};
 }

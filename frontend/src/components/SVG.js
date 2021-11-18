@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Box } from '@mui/material';
+import {useSelector} from 'react-redux'
 import * as saveSvgAsPng from 'save-svg-as-png';
 import 'external-svg-loader';
 import '../styles/SVG.css';
@@ -14,6 +15,8 @@ const SVG = ({
 	const filename = 'mycreation.svg';
 	const ImportedIconRef = useRef(null);
 	const [ loading, setLoading ] = useState(false);
+	const user = useSelector(store => store.userReducer.user)
+	
 	useEffect(
 		() => {
 			setLoading(true);
@@ -51,13 +54,23 @@ const SVG = ({
 						height="100%"
 					/>
 				</output>
-				<Button
-					variant="contained"
-					onClick={() =>
-						saveSvgAsPng.saveSvg(svgRef.current, filename)}
-				>
-					Download
-				</Button>
+				<Box sx={{width:"100%"}}>
+					<Box sx={{display:"flex", justifyContent:"space-evenly"}}>
+						<Button
+							variant="contained"
+							onClick={() =>
+								saveSvgAsPng.saveSvg(svgRef.current, filename)}
+						>
+							Download
+						</Button>
+						{/* TODO: add functionality for save button */}
+						{user ? 
+						<Button variant="contained">
+							Save
+						</Button> 
+						: null}		
+					</Box>
+				</Box>
 			</Box>
 		) : null;
 	}
