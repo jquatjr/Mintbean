@@ -7,7 +7,7 @@ import PictureSelect from './PictureSelect'
 export default function ColoringPage(){
     const [currentColor, setCurrentColor] = useState("white")
     const [picture, setPicture] = useState("octopus")
-    const availablePics = ["octopus", "birds", "dora", "flower"]
+    const availablePics = ["octopus", "birds", "dora", "flower", "mickey-beach"]
     const handlePictureChange = (e)=> {
         setPicture(e.target.value)
     
@@ -30,6 +30,3 @@ export default function ColoringPage(){
         </Box>
     )
 }
-
-// "M159.058,24.09c-6.107-5.596-9.423-13.925-18.933-15.536
-	// c-1.776-0.301-3.318,0.742-5.342-0.485c9.364-3.204,14.33,2.884,18.936,7.768C155.531,17.759,157.962,21.294,159.058,24.09z"

@@ -20,12 +20,11 @@ function RegistrationForm({ toggle, notify }) {
 		username : '',
 		password : ''
 	};
-	const user = useSelector((store) => store.userReducer.user);
 	const dispatch = useDispatch();
 
 	const navigate = useNavigate();
 	const notifyError = () =>
-		toast.error('Sorry, incorrect login information', {
+		toast.error('Sorry, username already taken', {
 			position : toast.POSITION.TOP_RIGHT
 		});
 	
@@ -47,7 +46,6 @@ function RegistrationForm({ toggle, notify }) {
 						onSubmit={async (values) => {
 							try {
 								let res = await dispatch(registerUser(values));
-								console.log(res.username);
 								if (res.username) {
 									toggle();
                                     notify(res.username)

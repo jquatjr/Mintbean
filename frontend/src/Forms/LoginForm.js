@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { getUserFromAPI } from '../actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
-function LoginForm({ toggle, open }) {
+function LoginForm({ toggle, notify }) {
 	const initialValues = {
 		username : '',
 		password : ''
@@ -28,10 +28,7 @@ function LoginForm({ toggle, open }) {
 		toast.error('Sorry, incorrect login information', {
 			position : toast.POSITION.TOP_RIGHT
 		});
-	const notifySuccess = () =>
-		toast.success(`Welcome back, ${user}!`, {
-			position : toast.POSITION.TOP_RIGHT
-		});
+	
 
 	return (
 		<div 
@@ -60,7 +57,7 @@ function LoginForm({ toggle, open }) {
 
 								if (res.username) {
 									toggle();
-									if(window.location("/"))navigate('/color');
+									notify(res.username)
 								}
 							} catch (err) {
 								console.log(err);
