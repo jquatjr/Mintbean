@@ -7,7 +7,7 @@ import PictureSelect from './PictureSelect'
 export default function ColoringPage(){
     const [currentColor, setCurrentColor] = useState("white")
     const [picture, setPicture] = useState("octopus")
-    const availablePics = ["octopus", "birds", "dora", "flower", "mickey-beach"]
+    const availablePics = ["octopus", "mickey-beach", "Elephant"]
     const handlePictureChange = (e)=> {
         setPicture(e.target.value)
     
