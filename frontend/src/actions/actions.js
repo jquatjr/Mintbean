@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GET_USER } from './types';
 
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'http://localhost:9000';
 
 function getUser(username) {
 	return {
@@ -20,13 +20,13 @@ export function getUserFromAPI(username, password) {
 				password : `${password}`
 			}
 		});
-
+		console.log(response);
 		return dispatch(getUser(response.data, username));
 	};
 }
 
 export function registerUser(data) {
-	console.log(data)
+	console.log(data.username, data.password);
 	return async function(dispatch) {
 		const response = await axios({
 			method : 'post',
@@ -36,6 +36,7 @@ export function registerUser(data) {
 				password : data.password
 			}
 		});
+		console.log(response);
 		return dispatch(getUser(response.data.username));
 	};
 }
