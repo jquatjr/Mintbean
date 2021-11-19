@@ -24,6 +24,14 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.post("/testing", async (req, res, next) => {
+  try {
+    console.log(req.body);
+  } catch (e) {
+    return next(e);
+  }
+});
+
 router.get("/:id", async (req, res, next) => {
   try {
     const coloring = await Coloring.get(req.params.id);
