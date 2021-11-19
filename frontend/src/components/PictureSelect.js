@@ -3,7 +3,7 @@ import {InputLabel, MenuItem, FormHelperText, FormControl, Select} from '@mui/ma
 export default function PictureSelect({picture, handlePictureChange, availablePics}){
     return (
         <div>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl sx={{ m: 1, minWidth: 300 }}>
           <InputLabel id="picture-label">Picture</InputLabel>
           <Select
             labelId="picture-label"

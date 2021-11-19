@@ -17,7 +17,7 @@ const DemoBook = ({ currentColor }) => {
        
     // }
 	return (
-		<Box sx={{ paddingTop: '5rem' }}>
+		<Box sx={{ paddingTop: '5rem'}}>
 			<h1>Demo Book</h1>
 			<Button onClick={() => book.current.pageFlip().flipPrev()}>
 				Prev Page
@@ -27,15 +27,13 @@ const DemoBook = ({ currentColor }) => {
 			</Button>
 			<HTMLFlipBook
 				style={{ margin: 'auto' }}
-				width={500}
-				height={500}
-				size={'stretch'}
 				ref={book}
 				useMouseEvents={false}
+				maxShadowOpacity={0.5}
 			>
 				{svgs.map((page) => (
-					<Box key={page.path} data-density="hard">
-						<SVG
+					<Box className="page-content" key={page.path} data-density="soft" >
+						<SVG 
 							name={page.path.slice(2).slice(0, -4)}
 							currentColor={currentColor}
 						/>

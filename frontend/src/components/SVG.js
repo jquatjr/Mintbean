@@ -38,7 +38,7 @@ const SVG = ({
 
 	if (!loading && ImportedIconRef.current) {
 		return ImportedIconRef.current ? (
-			<Box sx={{ width: '100%', height: '95%' }}>
+			<Box sx={{ width: '100%', height: '95%', backgroundColor:"aliceblue" }}>
 				<output
 					className="SVG-container"
 					id="SVG"
