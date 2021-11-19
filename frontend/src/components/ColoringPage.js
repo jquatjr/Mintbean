@@ -1,8 +1,7 @@
 import {useState} from 'react'
-import {Box, Typography, Paper} from '@mui/material'
+import {Box,  Paper} from '@mui/material'
 import {SketchPicker} from 'react-color'
 import '../styles/ColoringPage.css'
-import SVG from "./SVG"
 import DemoBook from './DemoBook'
 import PictureSelect from './PictureSelect'
 export default function ColoringPage(){

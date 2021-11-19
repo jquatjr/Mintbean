@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/Navbar.css';
-import { Box, Typography, AppBar, Button, Toolbar } from '@mui/material';
+import { Box, Typography, AppBar, Toolbar } from '@mui/material';
 export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -30,7 +30,8 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 			<Typography onClick={logout} sx={{ marginRight: '1rem' }} className="Navbar-link">
 				Logout
 			</Typography>
-			<Typography className="Navbar-link">My Pictures</Typography>
+			<Typography className="Navbar-link" sx={{ marginRight: '1rem' }} onClick={()=> navigate('/color')} >Coloring Page</Typography>
+			<Typography onClick={()=> navigate('/my-pictures')} className="Navbar-link">My Pictures</Typography>
 		</Box>
 	);
 	return (

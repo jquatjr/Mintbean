@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Box } from '@mui/material';
-import {useSelector, useDispatch} from 'react-redux'
+import { useDispatch} from 'react-redux'
 import * as saveSvgAsPng from 'save-svg-as-png';
 import 'external-svg-loader';
 import '../styles/SVG.css';
@@ -13,8 +13,6 @@ const SVG = ({
 	const filename = 'mycreation.svg';
 	const ImportedIconRef = useRef(null);
 	const [ loading, setLoading ] = useState(false);
-	const colorings = useSelector(store => store.coloringReducer)
-	if(colorings[name]) console.log("found it", name)
 	useEffect(
 		() => {
 			setLoading(true);
