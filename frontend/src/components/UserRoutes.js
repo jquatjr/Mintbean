@@ -1,7 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import ColoringPage from './ColoringPage'
 import LandingPage from './LandingPage'
-import DemoBook from './DemoBook'
 import Page from './Page'
 export default function UserRoutes(){
     return (

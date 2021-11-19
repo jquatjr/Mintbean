@@ -9,21 +9,18 @@ import {
 	Button
 } from '@mui/material';
 import { object, string } from 'yup';
-import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getUserFromAPI } from '../actions/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 function LoginForm({ toggle, notify }) {
 	const initialValues = {
 		username : '',
 		password : ''
 	};
-	const user = useSelector((store) => store.userReducer.user);
 	const dispatch = useDispatch();
 
-	const navigate = useNavigate();
 	const notifyError = () =>
 		toast.error('Sorry, incorrect login information', {
 			position : toast.POSITION.TOP_RIGHT

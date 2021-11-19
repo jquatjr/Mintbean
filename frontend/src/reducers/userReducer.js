@@ -4,6 +4,8 @@ export default function userReducer(state = {}, action) {
 	switch (action.type) {
 		case GET_USER:
 			
+			window.localStorage.setItem("user", action.username)
+			window.localStorage.setItem("id", action.id)
 			return { ...state, user: action.username, id: action.id };
 		case LOGOUT:
 			return { ...state, user: null, id:null };

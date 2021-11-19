@@ -1,9 +1,10 @@
 import './App.css';
 
 import { useState } from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Modal } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
+import CheckForLSColorings  from './helpers/localStorage'
 import 'react-toastify/dist/ReactToastify.css';
 import LoginForm from './Forms/LoginForm';
 import RegistrationForm from './Forms/RegistrationForm';
@@ -12,7 +13,11 @@ import Navbar from './components/Navbar';
 function App() {
 	const [ isOpenLogin, setIsOpenLogin ] = useState(false);
 	const [ isOpenRegister, setIsOpenRegister ] = useState(false);
-  const user = useSelector(store => store.userReducer.user)
+	const dispatch = useDispatch()
+	CheckForLSColorings()
+	const user = window.localStorage.getItem("user") || null;
+	const id = window.localStorage.getItem("id") || null; 
+	if(user && id) dispatch({type:"GET_USER", username: user, id: id})
 	const toggleLoginModal = () => {
 		setIsOpenLogin((isOpenLogin) => !isOpenLogin);
 	};
