@@ -8,7 +8,7 @@ export default function Page(){
     const addSvgs = ()=>{
       for(const [key, value] of Object.entries(colorings)){
           let newSvg = document.createElement('svg')
-          
+          console.log(value)
           newSvg.innerHTML = value
           document.querySelector('.page').appendChild(newSvg)
           

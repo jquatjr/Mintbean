@@ -40,7 +40,7 @@ export function registerUser(data) {
 		return dispatch(getUser(response.data.username));
 	};
 }
-export async function getColoringsFromAPI(name, image, userId) {
+export async function postColoringsToAPI(name, image, userId) {
 		const response = await axios({
 			method : 'post',
 			url    : `${BASE_URL}/colorings`,
