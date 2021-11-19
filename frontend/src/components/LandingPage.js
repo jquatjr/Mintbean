@@ -6,6 +6,9 @@ export default function LandingPage(){
     const handleClick = ()=> {
         navigate("/color")
     }
+    const handleClick2 = ()=> {
+        navigate("/my-pictures")
+    }
     return (
         <Box sx={{paddingTop: '10rem'}}>
             <Paper sx={{width:"50%", margin: 'auto', height: "50%", padding: '5rem'}}>
@@ -15,6 +18,9 @@ export default function LandingPage(){
 
                 <Button variant="contained" onClick={handleClick}>
                     Coloring Page
+                </Button>
+                <Button variant="contained" onClick={handleClick2}>
+                    My pictures
                 </Button>
             </Paper>
         </Box>
