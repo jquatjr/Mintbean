@@ -6,35 +6,30 @@ import DemoBook from './DemoBook';
 import PictureSelect from './PictureSelect';
 export default function ColoringPage() {
 	const [ currentColor, setCurrentColor ] = useState('white');
-	const [ picture, setPicture ] = useState('octopus');
+	const [ book, setBook ] = useState('Random');
     const colors = ['#f44336','#e91e63',"#9c27b0","#673ab7","#3f51b5","#2196f3","#03a9f4","#00bcd4","#009688","#4caf50","#8bc34a","#cddc39","#ffeb3b","#ffc107","#ff9800", "#ff5722", "#735548", "#607db8" ,'#222222']
-	const availablePics = [
-		'octopus',
-		'mickey-beach',
-		'Elephant',
-		'cover',
-		'page1',
-		'page2'
+	const availableBooks = [
+		'Random'
 	];
-	const handlePictureChange = (e) => {
-		setPicture(e.target.value);
+	const handleBookChange = (e) => {
+		setBook(e.target.value);
 	};
 	const handleChangeColor = (color) => {
 		setCurrentColor(color.hex);
 	};
 	return (
 		<Box sx={{ paddingTop: '1rem', height: '100vh' }}>
-			<Box sx={{ width: '100%'}}>
+			<Box sx={{ width: '100%', position:"relative"}}>
 				<Box sx={{margin:'auto', paddingRight:'3rem'}}>
 					<PictureSelect
                         
-						picture={picture}
-						handlePictureChange={handlePictureChange}
-						availablePics={availablePics}
+						book={book}
+						handlePictureChange={handleBookChange}
+						availableBooks={availableBooks}
 					/>
 				</Box>
-				<Box sx={{width:"100%", paddingLeft: "13rem"}}>
-					
+				<Box sx={{width:"100%"}}>
+					<Box sx={{margin:"auto", width:"55%"}}>
 					<CirclePicker
                         width="100%"
 						className="ColoringPage-sketch"
@@ -44,15 +39,16 @@ export default function ColoringPage() {
 						color={currentColor}
 						onChangeComplete={handleChangeColor}
 					/>
+                    </Box>
 				</Box>
 			</Box>
 			<Box
 				sx={{
-					width: '80%',
-                    marginTop:"-5rem"
+					width: '80%', 
+                    margin:"auto"
 				}}
 			>
-				<DemoBook book={null} currentColor={currentColor} />
+				<DemoBook bookName={book} currentColor={currentColor} />
 			</Box>
 		</Box>
 	);
