@@ -1,6 +1,7 @@
 import HTMLFlipBook from 'react-pageflip';
 import { Box, Button, Typography } from '@mui/material';
 import SVG from './SVG';
+import '../styles/SVG.css'
 import { useRef, useEffect, useState } from 'react';
 import {getBooks} from '../helpers/getBooks'
 const DemoBook = ({ currentColor, bookName }) => {
@@ -21,7 +22,6 @@ const DemoBook = ({ currentColor, bookName }) => {
 		}
 		getSvgs()
 	}, [bookName])
-	console.log(svgsRef.current)
 	if(isLoading) return <h1>Loading</h1>
 	return (
 		<Box sx={{ paddingTop: '5rem' }}>
@@ -40,6 +40,7 @@ const DemoBook = ({ currentColor, bookName }) => {
 				Next Page
 			</Button>
 			<HTMLFlipBook
+				className="flipbook"
 				style={{ margin: 'auto' }}
 				ref={book}
 				useMouseEvents={false}
@@ -52,10 +53,11 @@ const DemoBook = ({ currentColor, bookName }) => {
 					
 					<Box
 						key={page.path}
-						data-density="hard"
+						data-density="soft"
 					>
 						<SVG
 							text={page.text}
+							pageClass={page.className}
 							bookName={bookName}
 							name={page.path.slice(2).slice(0, -4)}
 							currentColor={currentColor}

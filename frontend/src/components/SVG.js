@@ -8,13 +8,15 @@ const SVG = ({
 	name,
 	currentColor, 
 	bookName, 
-	text
+	text, 
+	pageClass
 }) => {
 	const dispatch = useDispatch()
 	const svgRef = useRef(null);
 	const filename = 'mycreation.svg';
 	const ImportedIconRef = useRef(null);
 	const [ loading, setLoading ] = useState(false);
+	
 	useEffect(
 		() => {
 			setLoading(true);
@@ -41,7 +43,7 @@ const SVG = ({
 	if (!loading && ImportedIconRef.current) {
 		return ImportedIconRef.current ? (
 			<>
-			<Box sx={{ width: '95%', height: '95%', backgroundColor:"aliceblue" }}>
+			<Box className={`SVG-${pageClass}`} >
 				<svg
 					onClick={handleClick}
 					ref={svgRef}
