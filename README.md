@@ -31,7 +31,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">StoryPaint</h3>
 
   <p align="center">
     project_description
@@ -79,7 +79,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `StoryPaint`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
