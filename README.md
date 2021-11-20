@@ -28,13 +28,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/CoderDill/Mintbean">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./LandingPage/StoryPaint2.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">StoryPaint</h3>
 
   <p align="center">
-    project_description
+    StoryPaint is a coloring book application.
     <br />
     <a href="https://github.com/CoderDill/Mintbean"><strong>Explore the docs »</strong></a>
     <br />
@@ -79,7 +79,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `StoryPaint`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `StoryPaint`, `StoryPaint is a coloring book application.`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
