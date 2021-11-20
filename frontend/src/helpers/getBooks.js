@@ -13,7 +13,7 @@ const PeppaText = [
   "Peppa and George couldn't wait to get up and go play outside...",
   "But first mommy pig needed to make breakfast.",
   "And daddy pig read the morning newspaper.",
-  "Finally it was time to play. Ut oh, it has started raining...",
+  "Finally it was time to play. Uh oh, it has started raining...",
   "Good thing Peppa and George LOVE jumping in muddy puddles.",
   "Everyone loves jumping in muddy puddles!",
 ];

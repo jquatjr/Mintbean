@@ -14,13 +14,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
-<<<<<<< HEAD
 app.use(express.json({limit:"50mb"}));
 app.use(express.urlencoded({ extended: false, limit:"50mb" }));
-=======
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: false, limit: "50mb" }));
->>>>>>> 84303aeafb42a5c920123796500b9a55b1461cd4
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
