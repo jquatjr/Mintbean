@@ -5,19 +5,26 @@ Page 2: peppa_house
     "It was a beautiful, sunny day at the Peppa pig house."
 
 Page 3: peppa_wakeup
-    "Peppa and George couldn't wait to get up and go play outside..."
+    "Peppa: Good morning George.
+     George: Oink Oink.
+     Peppa: I can't wait to go outside and play!"
 
 Page 4: peppa_breakfast
-    "But first mommy pig needed to make breakfast."
+    "Mommy pig has just finished making breakfast.
+     Mommy pig: Peppa! George! Time for breakfast!"
 
 Page 5: peppa_newpaper
-    "And daddy pig read the morning newspaper."
+    "While daddy pig reads the morning newspaper.
+     Daddy pig: Mmm, something smells good."
 
 Page 6: peppa_rain
-    "Finally it was time to play. Ut oh, it has started raining..."
+    "After breakfast, it was finally time to play. 
+     Mommy pig: Uh no, it's raining..."
 
 Page 7: peppa_george_puddles
-    "Good thing Peppa and George LOVE jumping in muddy puddles."
+    "Good thing Peppa and George LOVE jumping up and down in muddy puddles!"
 
 Page 8: peppa_everyone_puddles
-    "Everyone loves jumping in muddy puddles!"
+    "Oh my goodness! Wow! So much mud!.
+     Splish, Splash, Splosh, Splish, Splash.
+     The End."
