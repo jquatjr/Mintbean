@@ -45,7 +45,7 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 						variant="h6"
 						component="div"
 					>
-						CleverTitle
+						StoryPaint
 					</Typography>
 					{user ? logoutButtons : loginButtons}
 				</Toolbar>
