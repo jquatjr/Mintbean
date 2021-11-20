@@ -15,7 +15,6 @@ export function getBooks(bookName){
     for(let i=0; i < RandomArr.length; i++){
         const className = ((i + 1) % 2 ) !== 0 ? "left" : "right"
         Random.push({path:RandomArr[i].path, text:RandomText[i], className:className})
-        
     }
     if(bookName === "Random"){
         return Random

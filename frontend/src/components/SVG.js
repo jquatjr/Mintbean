@@ -36,7 +36,7 @@ const SVG = ({
 	const handleClick = (e) => {
 		e.target.style.fill = currentColor;
 		const coloring = e.target.closest("svg").outerHTML
-		
+		console.log(e.target)
 		dispatch({type:"ADD_COLORING_TO_STATE", coloring:coloring, name: name  })
 	};
 

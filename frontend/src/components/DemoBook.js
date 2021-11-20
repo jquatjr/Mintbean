@@ -6,6 +6,8 @@ import { useRef, useEffect, useState } from 'react';
 import {getBooks} from '../helpers/getBooks'
 import { useSelector } from 'react-redux';
 import {postColoringsToAPI} from '../actions/actions'
+
+//TODO: toastify notification
 const DemoBook = ({ currentColor, bookName }) => {
 	const book = useRef();
 	const user = useSelector(store => store.userReducer.user)
@@ -15,7 +17,7 @@ const DemoBook = ({ currentColor, bookName }) => {
 	const [isLoading, setIsLoading] = useState(true)
 	const reqSvgs = require.context(`../assets`, true, /\.svg$/);
 	const postColorings = async() => {
-		console.log("click")
+		
 		const image = svgs.Elephant
 		const name = "Random"
 		const res = await postColoringsToAPI(name, image, userId)
