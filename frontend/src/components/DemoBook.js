@@ -4,17 +4,37 @@ import SVG from './SVG';
 import '../styles/SVG.css'
 import { useRef, useEffect, useState } from 'react';
 import {getBooks} from '../helpers/getBooks'
+import { useSelector } from 'react-redux';
+import {postColoringsToAPI} from '../actions/actions'
+
+//TODO: toastify notification
 const DemoBook = ({ currentColor, bookName }) => {
 	const book = useRef();
+	const user = useSelector(store => store.userReducer.user)
+	const userId = useSelector(store => store.userReducer.id)
+	const svgs = useSelector(store => store.coloringReducer)
 	const svgsRef = useRef(); 
 	const [isLoading, setIsLoading] = useState(true)
 	const reqSvgs = require.context(`../assets`, true, /\.svg$/);
-	// const allSvgFilepaths = reqSvgs.keys();
-	// const svgs = reqSvgs.keys().map((path) => ({ path, file: reqSvgs(path) }));
-	// const svgs = getBooks(bookName)
+	
+	const postColorings = async() => {
+		if(!Object.keys(svgs).length){ 
+		alert("Color something first!")
+		}
+		const keys = Object.keys(svgs)
+		const res = keys.forEach(async(key) => {
+			const image = svgs[key]
+			const name = "Random"
+			const res = await postColoringsToAPI(name, image, userId)
+			console.log(res)
+		})
+		
+		
+	}
 	
 	useEffect(()=> {
 		const getSvgs = async()=> {
+			
 			const imgs = await getBooks(bookName)
 			svgsRef.current = imgs
 			
@@ -65,7 +85,7 @@ const DemoBook = ({ currentColor, bookName }) => {
 					</Box>
 				))}
 			</HTMLFlipBook>
-			{/* {user ? <Button onClick={getColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null} */}
+			{user ? <Button onClick={postColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null}
 		</Box>
 	);
 };
