@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const cors = require('cors')
+const cors = require("cors");
 const app = express();
 
 const cRouter = require("./routes/colorings");
@@ -14,11 +14,16 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
 app.use(logger("dev"));
+<<<<<<< HEAD
 app.use(express.json({limit:"50mb"}));
 app.use(express.urlencoded({ extended: false, limit:"50mb" }));
+=======
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: false, limit: "50mb" }));
+>>>>>>> 84303aeafb42a5c920123796500b9a55b1461cd4
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(cors())
+app.use(cors());
 app.use("/users", uRouter);
 app.use("/colorings", cRouter);
 

@@ -16,16 +16,25 @@ const DemoBook = ({ currentColor, bookName }) => {
 	const svgsRef = useRef(); 
 	const [isLoading, setIsLoading] = useState(true)
 	const reqSvgs = require.context(`../assets`, true, /\.svg$/);
+	
 	const postColorings = async() => {
+		if(!Object.keys(svgs).length){ 
+		alert("Color something first!")
+		}
+		const keys = Object.keys(svgs)
+		const res = keys.forEach(async(key) => {
+			const image = svgs[key]
+			const name = "Random"
+			const res = await postColoringsToAPI(name, image, userId)
+			console.log(res)
+		})
 		
-		const image = svgs.Elephant
-		const name = "Random"
-		const res = await postColoringsToAPI(name, image, userId)
-		console.log(res)
+		
 	}
 	
 	useEffect(()=> {
 		const getSvgs = async()=> {
+			
 			const imgs = await getBooks(bookName)
 			svgsRef.current = imgs
 			
