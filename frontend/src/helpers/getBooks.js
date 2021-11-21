@@ -20,6 +20,7 @@ const PeppaText = [
 // const className = ((i + 1) % 2 ) === 0 ? "left" : "right"
 
 export function getBooks(bookName) {
+  console.log(bookName)
   if (bookName === "Random") {
     const Randomsvgs = require.context(
       `../assets/images/Random`,
@@ -47,16 +48,17 @@ export function getBooks(bookName) {
       path,
       file: Peppasvgs(path),
     }));
-    const Random = [];
+    const peppa = [];
 
     for (let i = 0; i < PeppaArr.length; i++) {
       const className = (i + 1) % 2 !== 0 ? "left" : "right";
-      Random.push({
+      peppa.push({
         path: PeppaArr[i].path,
         text: PeppaText[i],
         className: className,
       });
     }
-    return Random;
+    console.log(peppa)
+    return peppa;
   }
 }

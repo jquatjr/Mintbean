@@ -24,17 +24,18 @@ const DemoBook = ({ currentColor, bookName }) => {
 		const keys = Object.keys(svgs)
 		const res = keys.forEach(async(key) => {
 			const image = svgs[key]
-			const name = "Random"
+			const name = bookName
 			const res = await postColoringsToAPI(name, image, userId)
-			console.log(res)
+			
 		})
 		
 		
 	}
+	// console.log(book.current)
 	
 	useEffect(()=> {
 		const getSvgs = async()=> {
-			
+			setIsLoading(true)
 			const imgs = await getBooks(bookName)
 			svgsRef.current = imgs
 			
@@ -69,8 +70,10 @@ const DemoBook = ({ currentColor, bookName }) => {
 				width={100}
 				size='stretch'
 			>
-				{svgsRef.current.map((page) => (
+				{svgsRef.current.map((page) => 
+					{
 					
+					return (
 					<Box
 						key={page.path}
 						data-density="soft"
@@ -83,7 +86,8 @@ const DemoBook = ({ currentColor, bookName }) => {
 							currentColor={currentColor}
 						/>
 					</Box>
-				))}
+					)}
+				)}
 			</HTMLFlipBook>
 			{user ? <Button onClick={postColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null}
 		</Box>
