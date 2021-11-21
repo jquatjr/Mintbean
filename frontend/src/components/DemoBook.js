@@ -87,7 +87,9 @@ const DemoBook = ({ currentColor, bookName }) => {
 					)}
 				)}
 			</HTMLFlipBook>
-			{user ? <Button onClick={postColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null}
+			<Box className="SVG-save">
+			{user ? <Button  onClick={postColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null}
+			</Box>
 		</Box>
 	);
 };
