@@ -42,7 +42,7 @@ class Coloring {
 
     const coloring = results.rows[0];
 
-    if (!coloring) throw new ExpressError(`No coloring with id: ${id}`);
+    if (!coloring) throw new ExpressError(`No coloring with id: ${user_id}`);
 
     return coloring;
   }
