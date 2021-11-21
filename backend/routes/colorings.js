@@ -32,10 +32,10 @@ router.post("/testing", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:user_id", async (req, res, next) => {
   try {
-    const coloring = await Coloring.get(req.params.id);
-    return res.json(coloring);
+    const colorings = await Coloring.getAll(req.params.user_id);
+    return res.json(colorings);
   } catch (e) {
     return next(e);
   }
