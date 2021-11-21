@@ -15,7 +15,6 @@ const DemoBook = ({ currentColor, bookName }) => {
 	const svgs = useSelector(store => store.coloringReducer)
 	const svgsRef = useRef(); 
 	const [isLoading, setIsLoading] = useState(true)
-	const reqSvgs = require.context(`../assets`, true, /\.svg$/);
 	
 	const postColorings = async() => {
 		if(!Object.keys(svgs).length){ 
@@ -31,7 +30,6 @@ const DemoBook = ({ currentColor, bookName }) => {
 		
 		
 	}
-	// console.log(book.current)
 	
 	useEffect(()=> {
 		const getSvgs = async()=> {

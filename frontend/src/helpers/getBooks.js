@@ -58,7 +58,6 @@ export function getBooks(bookName) {
         className: className,
       });
     }
-    console.log(peppa)
     return peppa;
   }
 }

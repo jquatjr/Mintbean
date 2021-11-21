@@ -18,13 +18,12 @@ export default function ColoringPage() {
 	const handleChangeColor = (color) => {
 		setCurrentColor(color.hex);
 	};
-    console.log(book)
 
 
 	return (
 		<Box sx={{ paddingTop: '1rem', height: '100vh' }}>
-			<Box sx={{ width: '100%', position:"relative"}}>
-				<Box sx={{margin:'auto', paddingRight:'3rem'}}>
+			<Box sx={{ width: '100%'}}>
+				<Box sx={{margin:'auto'}}>
 					<PictureSelect
                         setBook={setBook}
 						book={book}
@@ -32,8 +31,8 @@ export default function ColoringPage() {
 						availableBooks={availableBooks}
 					/>
 				</Box>
-				<Box sx={{width:"100%"}}>
-					<Box sx={{margin:"auto", width:"55%", backgroundColor: "rgba(0,0,0,0.5)"}}>
+				<Box sx={{width:"100%", textAlign:"center"}}>
+					<Box sx={{margin:"auto", width:"75%",padding:"1rem", backgroundColor: "rgba(190, 164, 164, 0.8)", borderRadius:"5px"}}>
 					<CirclePicker
                         
                         width="100%"
