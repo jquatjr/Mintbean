@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/Navbar.css';
 import { Box, Typography, AppBar, Toolbar } from '@mui/material';
+import logo from '../assets/images/StoryPaint2.png'
 export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -45,7 +46,7 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 						variant="h6"
 						component="div"
 					>
-						StoryPaint
+						<img className="Navbar-logo" src={logo} /> 
 					</Typography>
 					{user ? logoutButtons : loginButtons}
 				</Toolbar>

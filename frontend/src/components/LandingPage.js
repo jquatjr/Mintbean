@@ -1,5 +1,6 @@
 import { Paper, Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router";
+import '../styles/LandingPage.css'
 export default function LandingPage() {
   const navigate = useNavigate();
 
@@ -12,8 +13,8 @@ export default function LandingPage() {
   return (
     <Box sx={{ paddingTop: "10rem" }}>
       <div class="container-fluid">
-        <div class="d-flex justify-content-center">
-          <img id="title" src="StoryPaint2.png" alt="" />
+        <div class="d-flex justify-content-center LandingPage-logo">
+          <img id="title" src="/assets/StoryPaint2.png" alt="" />
         </div>
         <div class="row"></div>
       </div>
