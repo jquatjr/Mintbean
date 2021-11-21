@@ -1,9 +1,11 @@
 import '../styles/Page.css'
 import {useSelector} from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { getUserColoringsFromAPI } from '../actions/actions'
 export default function Page(){
   const colorings = useSelector(store => store.coloringReducer)
-  console.log(colorings)
+  const userId = useSelector(store => store.userReducer.id)
+  const [isLoading, setLoading] = useState(true)
   useEffect(()=>{
     const addSvgs = ()=>{
       for(const [key, value] of Object.entries(colorings)){
@@ -11,12 +13,18 @@ export default function Page(){
           console.log(value)
           newSvg.innerHTML = value
           document.querySelector('.page').appendChild(newSvg)
-          
         }
     }
     addSvgs()
   },[colorings])
-  
+  useEffect(()=> {
+    const getColorings = async()=>{
+       const response = getUserColoringsFromAPI(userId)
+       console.log(response.length)
+    }
+    getColorings()
+  },[])
+    
     return (  
         <div className="page">
         

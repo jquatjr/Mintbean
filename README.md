@@ -28,13 +28,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/CoderDill/Mintbean">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./frontend/public/assets/StoryPaint2.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">StoryPaint</h3>
 
   <p align="center">
-    project_description
+    StoryPaint is a coloring book application.
     <br />
     <a href="https://github.com/CoderDill/Mintbean"><strong>Explore the docs »</strong></a>
     <br />
@@ -79,7 +79,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `StoryPaint`, `StoryPaint is a coloring book application.`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -142,29 +142,18 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 #### Examples
 
-![Elephant!](/images/elephant_colored.png "Elephant")
+![LandingPage!](/images/storypaintLP.png "Landing Page")
+
+![ColorPage!](/images/storypaint.png "Color Page")
 
 ![Elephant!](/images/octopus.png "Octopus")
+
+![Elephant!](/images/elephant_colored.png "Elephant")
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/CoderDill/Mintbean/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing

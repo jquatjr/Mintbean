@@ -1,6 +1,11 @@
 import {InputLabel, MenuItem, FormHelperText, FormControl, Select} from '@mui/material'
 
-export default function PictureSelect({book, handleBookChange, availableBooks}){
+export default function PictureSelect({book, setBook,  availableBooks}){
+    const handleChange = (e) => {
+        console.log(e.target.value)
+        setBook(e.target.value)
+    }
+
     return (
         <div>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -10,7 +15,7 @@ export default function PictureSelect({book, handleBookChange, availableBooks}){
             id="book"
             value={book}
             label="Book"
-            onChange={handleBookChange}
+            onChange={handleChange}
           >
             {availableBooks.map(pic => <MenuItem key={pic} value={pic}>{pic}</MenuItem>)}
           </Select>

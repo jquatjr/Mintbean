@@ -10,16 +10,17 @@ const RandomText = [
 const PeppaText = [
   "",
   "It was a beautiful, sunny day at the Peppa pig house.",
-  "Peppa and George couldn't wait to get up and go play outside...",
-  "But first mommy pig needed to make breakfast.",
-  "And daddy pig read the morning newspaper.",
-  "Finally it was time to play. Ut oh, it has started raining...",
-  "Good thing Peppa and George LOVE jumping in muddy puddles.",
-  "Everyone loves jumping in muddy puddles!",
+  "Peppa: Good morning George. George: Oink Oink. Peppa: I can't wait to go outside and play!",
+  "Mommy pig has just finished making breakfast. Mommy pig: Peppa! George! Time for breakfast!",
+  "While daddy pig reads the morning newspaper. Daddy pig: Mmm, something smells good.",
+  "After breakfast, it was finally time to play. Mommy pig: Uh no, it's raining...",
+  "Good thing Peppa and George LOVE jumping up and down in muddy puddles!",
+  "Oh my goodness! Wow! So much mud!. Splish, Splash, Splosh, Splish, Splash. The End.",
 ];
 // const className = ((i + 1) % 2 ) === 0 ? "left" : "right"
 
 export function getBooks(bookName) {
+  console.log(bookName);
   if (bookName === "Random") {
     const Randomsvgs = require.context(
       `../assets/images/Random`,
@@ -41,22 +42,22 @@ export function getBooks(bookName) {
       });
     }
     return Random;
-  } else if (bookName === "peppa") {
-    const Peppasvgs = require.context(`../assets/images/peppa`, true, /\.svg$/);
+  } else if (bookName === "Peppa") {
+    const Peppasvgs = require.context(`../assets/images/Peppa`, true, /\.svg$/);
     const PeppaArr = Peppasvgs.keys().map((path) => ({
       path,
       file: Peppasvgs(path),
     }));
-    const Random = [];
+    const Peppa = [];
 
     for (let i = 0; i < PeppaArr.length; i++) {
       const className = (i + 1) % 2 !== 0 ? "left" : "right";
-      Random.push({
+      Peppa.push({
         path: PeppaArr[i].path,
         text: PeppaText[i],
         className: className,
       });
     }
-    return Random;
+    return Peppa;
   }
 }

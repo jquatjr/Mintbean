@@ -1,5 +1,3 @@
-"use strict";
-
 const db = require("../db");
 const ExpressError = require("../expressError");
 
@@ -34,17 +32,17 @@ class Coloring {
     return result.rows[0];
   }
 
-  static async get(id) {
+  static async getAll(user_id) {
     const results = await db.query(
-      `SELECT id, name, image, user_id
+      `SELECT id, name, image
            FROM colorings
-           WHERE id = $1`,
-      [id]
+           WHERE user_id = $1`,
+      [user_id]
     );
 
     const coloring = results.rows[0];
 
-    if (!coloring) throw new ExpressError(`No coloring with id: ${id}`);
+    if (!coloring) throw new ExpressError(`No coloring with id: ${user_id}`);
 
     return coloring;
   }

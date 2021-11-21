@@ -53,6 +53,16 @@ export async function postColoringsToAPI(name, image, userId) {
 		return response.data
 	
 }
+
+export async function getUserColoringsFromAPI(user_id){
+	const response = await axios({
+		method: 'get', 
+		url : `${BASE_URL}/colorings/${user_id}`,
+
+	})
+	console.log(response)
+	return response.data
+}
 // function getPost(post) {
 //     return {
 //         // type: GET_POST,

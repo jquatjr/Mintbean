@@ -50,10 +50,10 @@ const SVG = ({
 					id="my-svg"
 					className="SVG"
 					data-src={`${ImportedIconRef.current}`}
-					width="100%"
+					width="90%"
 					height="90%"
 				/>
-				<h3>{text}</h3>
+				<p className="SVG-text">{text}</p>
 			</Box>
 			<Box sx={{display:"flex", justifyContent:"space-evenly"}}>
 				<Button
