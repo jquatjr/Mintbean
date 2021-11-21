@@ -25,8 +25,8 @@ export default function LandingPage() {
             <h2 class="text-center">Paint a coloring book with a story</h2>
             <p class="fw-light fs-4 text-center">
               Create an account to save all your progress and pick up where you
-              left off next time. Otherwise, continue as a guest. You can still
-              download
+              left off next time. Otherwise, continue as a guest,
+              where you can still download your book.
             </p>
           </div>
         </div>
@@ -36,35 +36,22 @@ export default function LandingPage() {
             <h2 class="mb-4 text-white text-center">Create an Account</h2>
             <div class="row">
               <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text">First Name</span>
-                <input type="text" class="form-control" placeholder="John" />
+                <span class="input-group-text">Username</span>
+                <input type="text" class="form-control" placeholder="Username" />
               </div>
             </div>
             <div class="row">
               <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text">Last Name</span>
+                <span class="input-group-text">Password</span>
                 <input
                   type="text"
                   required
                   class="form-control"
-                  placeholder="Doe"
+                  placeholder="Password"
                 />
               </div>
             </div>
-            <div class="row">
-              <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text">Email</span>
-                <input
-                  type="email"
-                  required
-                  class="form-control"
-                  placeholder="name@example.com"
-                />
-                <span class="input-group-text">
-                  <i class="far fa-envelope"></i>
-                </span>
-              </div>
-            </div>
+            
             <span>
               <button
                 onClick={handleClick2}
@@ -100,6 +87,7 @@ export default function LandingPage() {
                     <img
                       src="./assets/MattDillon.jpg"
                       class="img-thumbnail mb-3"
+                      alt="Missing"
                     />
                   </div>
                   <h5 class=" text-center">Full Stack Developer</h5>
