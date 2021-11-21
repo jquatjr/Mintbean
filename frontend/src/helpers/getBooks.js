@@ -13,13 +13,14 @@ const PeppaText = [
   "Peppa and George couldn't wait to get up and go play outside...",
   "But first mommy pig needed to make breakfast.",
   "And daddy pig read the morning newspaper.",
-  "Finally it was time to play. Ut oh, it has started raining...",
+  "Finally it was time to play. Uh oh, it has started raining...",
   "Good thing Peppa and George LOVE jumping in muddy puddles.",
   "Everyone loves jumping in muddy puddles!",
 ];
 // const className = ((i + 1) % 2 ) === 0 ? "left" : "right"
 
 export function getBooks(bookName) {
+  console.log(bookName)
   if (bookName === "Random") {
     const Randomsvgs = require.context(
       `../assets/images/Random`,
@@ -47,16 +48,16 @@ export function getBooks(bookName) {
       path,
       file: Peppasvgs(path),
     }));
-    const Random = [];
+    const peppa = [];
 
     for (let i = 0; i < PeppaArr.length; i++) {
       const className = (i + 1) % 2 !== 0 ? "left" : "right";
-      Random.push({
+      peppa.push({
         path: PeppaArr[i].path,
         text: PeppaText[i],
         className: className,
       });
     }
-    return Random;
+    return peppa;
   }
 }
