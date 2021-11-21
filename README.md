@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/CoderDill/Mintbean">
-    <img src="./LandingPage/StoryPaint2.png" alt="Logo" width="80" height="80">
+    <img src="./frontend/public/assets/StoryPaint2.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">StoryPaint</h3>
@@ -142,29 +142,18 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 #### Examples
 
-![Elephant!](/images/elephant_colored.png "Elephant")
+![LandingPage!](/images/storypaintLP.png "Landing Page")
+
+![ColorPage!](/images/storypaint.png "Color Page")
 
 ![Elephant!](/images/octopus.png "Octopus")
+
+![Elephant!](/images/elephant_colored.png "Elephant")
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
-
-See the [open issues](https://github.com/CoderDill/Mintbean/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
