@@ -2,7 +2,7 @@
   "name": "coloring-app",
   "version": "0.1.0",
   "private": true,
-  "engines":{
+  "engines": {
     "node": "16.5.0"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "react": "^17.0.2",
     "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
+    "react-pageflip": "^2.0.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^4.0.3",
@@ -39,13 +40,13 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node backend/bin/www",
     "client": "cd frontend && react-scripts start",
-    "server-with-client": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "server-with-client": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
     "extends": [
