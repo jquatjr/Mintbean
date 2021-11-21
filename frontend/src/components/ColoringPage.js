@@ -37,6 +37,7 @@ export default function ColoringPage() {
     setCurrentColor(color.hex);
   };
 
+
   return (
     <Box sx={{ paddingTop: "1rem", height: "100vh" }}>
       <Box sx={{ width: "100%" }}>
@@ -50,6 +51,7 @@ export default function ColoringPage() {
         </Box>
         <Box sx={{ width: "100%", textAlign: "center" }}>
           <Box
+
             sx={{
               margin: "auto",
               width: "75%",
@@ -68,6 +70,7 @@ export default function ColoringPage() {
               onChangeComplete={handleChangeColor}
             />
           </Box>
+
         </Box>
       </Box>
       <Box
@@ -81,3 +84,4 @@ export default function ColoringPage() {
     </Box>
   );
 }
+

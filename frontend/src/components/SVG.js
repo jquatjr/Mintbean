@@ -53,7 +53,7 @@ const SVG = ({
 					width="90%"
 					height="90%"
 				/>
-				<h3>{text}</h3>
+				<p className="SVG-text">{text}</p>
 			</Box>
 			<Box sx={{display:"flex", justifyContent:"space-evenly"}}>
 				<Button

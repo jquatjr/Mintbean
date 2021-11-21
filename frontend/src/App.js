@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { Modal } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
@@ -13,8 +13,9 @@ import Navbar from './components/Navbar';
 function App() {
 	const [ isOpenLogin, setIsOpenLogin ] = useState(false);
 	const [ isOpenRegister, setIsOpenRegister ] = useState(false);
+	const [isLoading, setLoading] = useState(true)
 	const dispatch = useDispatch()
-	CheckForLSColorings()
+	
 	const user = window.localStorage.getItem("user") || null;
 	const id = window.localStorage.getItem("id") || null; 
 	if(user && id) dispatch({type:"GET_USER", username: user, id: id})

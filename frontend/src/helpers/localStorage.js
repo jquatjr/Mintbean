@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 
-export default function CheckForLSColorings(){
+export default function CheckForLSColorings(setLoading){
+    
     const dispatch = useDispatch(); 
     const reqSvgs = require.context('../assets', true, /\.svg$/);
     const allSvgFilepaths = reqSvgs.keys();
@@ -14,4 +15,5 @@ export default function CheckForLSColorings(){
             dispatch({type:"ADD_COLORING_TO_STATE", name:path, coloring:value})
         }
     })
+    
 }

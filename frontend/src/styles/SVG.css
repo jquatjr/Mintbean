@@ -1,14 +1,23 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+
 .SVG:hover {
     cursor: pointer;
     
 }
 
 .SVG-left , .SVG-right {
-    background-color: rgb(231, 227, 227);
+    background-color: rgb(243, 239, 239);
     height: 100%; 
     
     
     
+}
+
+.SVG-text {
+    font-family:"Playfair Display", serif; 
+    line-height: 1.5rem;
 }
 
 
