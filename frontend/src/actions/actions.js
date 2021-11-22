@@ -5,35 +5,35 @@ const BASE_URL = 'http://localhost:9000';
 
 function getUser(username, id) {
 	return {
-		type     : GET_USER,
+		type: GET_USER,
 		username, id
 	};
 }
 
 export function getUserFromAPI(data) {
-	return async function(dispatch) {
+	return async function (dispatch) {
 		const response = await axios({
-			method : 'post',
-			url    : `${BASE_URL}/users/login`,
-			data   : {
-				username : `${data.username}`,
-				password : `${data.password}`
+			method: 'post',
+			url: `${BASE_URL}/users/login`,
+			data: {
+				username: `${data.username}`,
+				password: `${data.password}`
 			}
 		});
-		
+
 		return dispatch(getUser(response.data.username, response.data.id));
 	};
 }
 
 export function registerUser(data) {
 	console.log(data.username, data.password);
-	return async function(dispatch) {
+	return async function (dispatch) {
 		const response = await axios({
-			method : 'post',
-			url    : `${BASE_URL}/users`,
-			data   : {
-				username : data.username,
-				password : data.password
+			method: 'post',
+			url: `${BASE_URL}/users`,
+			data: {
+				username: data.username,
+				password: data.password
 			}
 		});
 		console.log(response);
@@ -41,23 +41,23 @@ export function registerUser(data) {
 	};
 }
 export async function postColoringsToAPI(name, image, userId) {
-		const response = await axios({
-			method : 'post',
-			url    : `${BASE_URL}/colorings`,
-			data   : {
-				name : name,
-				image : image, 
-				user_id: userId
-			}
-		});
-		return response.data
-	
+	const response = await axios({
+		method: 'post',
+		url: `${BASE_URL}/colorings`,
+		data: {
+			name: name,
+			image: image,
+			user_id: userId
+		}
+	});
+	return response.data
+
 }
 
-export async function getUserColoringsFromAPI(user_id){
+export async function getUserColoringsFromAPI(user_id) {
 	const response = await axios({
-		method: 'get', 
-		url : `${BASE_URL}/colorings/${user_id}`,
+		method: 'get',
+		url: `${BASE_URL}/colorings/${user_id}`,
 
 	})
 	console.log(response)
