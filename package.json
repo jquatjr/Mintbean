@@ -39,9 +39,6 @@
     "yarn": "^1.22.17",
     "yup": "^0.32.11"
   },
-  "optionalDependencies": {
-    "fsevents": "*"
- },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
@@ -58,7 +55,6 @@
       "react-app/jest"
     ]
   },
-  
   "browserslist": {
     "production": [
       ">0.2%",

@@ -23,7 +23,7 @@ export default function Page(){
        console.log(response.length)
     }
     getColorings()
-  },[])
+  },[userId])
     
     return (  
         <div className="page">

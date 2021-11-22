@@ -31,14 +31,12 @@ class Coloring {
     );
     return result.rows[0];
   }
-  
-  
-  static async getAll(user_id) {
 
+  static async getAll(user_id) {
     const results = await db.query(
       `SELECT id, name, image
            FROM colorings
-           WHERE coloring.user_id = $1`,
+           WHERE colorings.user_id = $1`,
       [user_id]
     );
 
