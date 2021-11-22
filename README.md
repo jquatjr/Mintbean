@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/CoderDill/Mintbean">
-    <img src="./frontend/public/assets/StoryPaint2.png" alt="Logo" width="80" height="80">
+    <img src="./frontend/public/assets/StoryPaintReadMe.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">StoryPaint</h3>
