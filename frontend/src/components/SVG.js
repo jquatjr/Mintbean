@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button, Box } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import * as saveSvgAsPng from 'save-svg-as-png';
 import 'external-svg-loader';
 import '../styles/SVG.css';
@@ -16,7 +16,6 @@ const SVG = ({
 	const filename = 'mycreation.svg';
 	const ImportedIconRef = useRef(null);
 	const [ loading, setLoading ] = useState(false);
-	const colorings = useSelector(store => store.coloringReducer)
 	useEffect(
 		() => {
 			setLoading(true);
@@ -36,7 +35,6 @@ const SVG = ({
 	const handleClick = (e) => {
 		if(e.target.style.cssText.includes("fill: rgb(0, 0, 0);")) return
 		e.target.style.fill = currentColor;
-		console.log(e.target.style.cssText)
 		const coloring = e.target.closest("svg").outerHTML
 		dispatch({type:"ADD_COLORING_TO_STATE", coloring:coloring, name: name  })
 	};

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Box } from "@mui/material";
 import { CirclePicker } from "react-color";
 import "../styles/ColoringPage.css";

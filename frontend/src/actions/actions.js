@@ -20,7 +20,7 @@ export function getUserFromAPI(data) {
 				password : `${data.password}`
 			}
 		});
-		
+		console.log(response)
 		return dispatch(getUser(response.data.username, response.data.id));
 	};
 }
@@ -35,9 +35,10 @@ export function registerUser(data) {
 				password : data.password
 			}
 		});
-		return dispatch(getUser(response.data.username));
+		return dispatch(getUser(response.data.username, response.data.id));
 	};
 }
+
 export async function postColoringsToAPI(name, image, userId) {
 		const response = await axios({
 			method : 'post',
@@ -48,7 +49,6 @@ export async function postColoringsToAPI(name, image, userId) {
 				user_id: userId
 			}
 		});
-		console.log(response.data)
 		return response.data
 	
 }
@@ -59,7 +59,6 @@ export async function getUserColoringsFromAPI(user_id){
 		url : `${BASE_URL}/colorings/${user_id}`,
 
 	})
-	console.log(response)
 	return response.data
 }
 // function getPost(post) {
