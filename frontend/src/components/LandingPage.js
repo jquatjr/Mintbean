@@ -1,6 +1,6 @@
 import { Paper, Box, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router";
-import '../styles/LandingPage.css'
+
 export default function LandingPage() {
   const navigate = useNavigate();
 

@@ -26,7 +26,6 @@ export function getUserFromAPI(data) {
 }
 
 export function registerUser(data) {
-	console.log(data.username, data.password);
 	return async function(dispatch) {
 		const response = await axios({
 			method : 'post',
@@ -36,7 +35,6 @@ export function registerUser(data) {
 				password : data.password
 			}
 		});
-		console.log(response);
 		return dispatch(getUser(response.data.username));
 	};
 }
@@ -50,6 +48,7 @@ export async function postColoringsToAPI(name, image, userId) {
 				user_id: userId
 			}
 		});
+		console.log(response.data)
 		return response.data
 	
 }

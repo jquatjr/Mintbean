@@ -34,8 +34,9 @@ const SVG = ({
 		[ bookName, name ]
 	);
 	const handleClick = (e) => {
-		
+		if(e.target.style.cssText.includes("fill: rgb(0, 0, 0);")) return
 		e.target.style.fill = currentColor;
+		console.log(e.target.style.cssText)
 		const coloring = e.target.closest("svg").outerHTML
 		dispatch({type:"ADD_COLORING_TO_STATE", coloring:coloring, name: name  })
 	};
