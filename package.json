@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "16.5.0"
+    "node": "v10.19.0"
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -46,7 +46,8 @@
     "eject": "react-scripts eject",
     "server": "node backend/bin/www",
     "client": "cd frontend && react-scripts start",
-    "server-with-client": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "server-with-client": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +55,7 @@
       "react-app/jest"
     ]
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",
