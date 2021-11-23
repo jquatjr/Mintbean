@@ -11,9 +11,9 @@ import * as saveSvgAsPng from 'save-svg-as-png';
 export default function MyPictures() {
 	const userId = useSelector((store) => store.userReducer.id);
 	const svgs = useRef(null);
-  const navigate = useNavigate()
+	const navigate = useNavigate();
 	const [ isLoading, setLoading ] = useState(true);
-  const [ colorings, setColorings ] = useState(null)
+	const [ colorings, setColorings ] = useState(null);
 	useEffect(
 		() => {
 			const getColorings = async () => {
@@ -29,7 +29,7 @@ export default function MyPictures() {
 
 					return { image: image, id: svg.id, name: svg.name };
 				});
-        setColorings(svgs.current)
+				setColorings(svgs.current);
 				if (svgs.current !== null) setLoading(false);
 			};
 			getColorings();
@@ -44,14 +44,12 @@ export default function MyPictures() {
 		const name = svg.dataset.name;
 		saveSvgAsPng.saveSvg(svg, name);
 	};
-  const handleDelete = async(e) => {
-    const res = await deleteColoringFromAPI(e.target.dataset.id)
-    
-    setLoading(true)
-    setLoading(false)
-    
-    
-  }
+	const handleDelete = async (e) => {
+		const res = await deleteColoringFromAPI(e.target.dataset.id);
+
+		setLoading(true);
+		setLoading(false);
+	};
 	return (
 		<Box className="MyPictures">
 			{svgs.current ? (
@@ -61,10 +59,16 @@ export default function MyPictures() {
 							className="MyPictures-svg"
 							dangerouslySetInnerHTML={{ __html: el.image }}
 						/>
-						<Button  onClick={handleClick} variant="contained">
+						<Button onClick={handleClick} variant="contained">
 							Download
 						</Button>
-						<Button data-id={el.id} onClick={handleDelete} variant="contained">Delete</Button>
+						<Button
+							data-id={el.id}
+							onClick={handleDelete}
+							variant="contained"
+						>
+							Delete
+						</Button>
 					</Box>
 				))
 			) : null}
