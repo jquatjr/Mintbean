@@ -1,11 +1,11 @@
 import HTMLFlipBook from 'react-pageflip';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import SVG from './SVG';
 import '../styles/SVG.css'
 import { useRef, useEffect, useState } from 'react';
-import {getBooks} from '../helpers/getBooks'
+import { getBooks } from '../helpers/getBooks'
 import { useSelector } from 'react-redux';
-import {postColoringsToAPI} from '../actions/actions'
+import { postColoringsToAPI } from '../actions/actions'
 
 //TODO: toastify notification
 const DemoBook = ({ currentColor, bookName }) => {
@@ -13,35 +13,36 @@ const DemoBook = ({ currentColor, bookName }) => {
 	const user = useSelector(store => store.userReducer.user)
 	const userId = useSelector(store => store.userReducer.id)
 	const svgs = useSelector(store => store.coloringReducer)
-	const svgsRef = useRef(); 
+	const svgsRef = useRef();
 	const [isLoading, setIsLoading] = useState(true)
-	
-	const postColorings = async() => {
-		if(!Object.keys(svgs).length){ 
-		alert("Color something first!")
+
+	const postColorings = async () => {
+		if (!Object.keys(svgs).length) {
+			alert("Color something first!")
 		}
 		const keys = Object.keys(svgs)
-		const res = keys.forEach(async(key) => {
+		const res = keys.forEach(async (key) => {
 			const image = svgs[key]
 			const name = bookName
 			const res = await postColoringsToAPI(name, image, userId)
-			
+			return res
 		})
-		
-		
+
+
+
 	}
-	
-	useEffect(()=> {
-		const getSvgs = async()=> {
+
+	useEffect(() => {
+		const getSvgs = async () => {
 			setIsLoading(true)
 			const imgs = await getBooks(bookName)
 			svgsRef.current = imgs
-			
+
 			setIsLoading(false)
 		}
 		getSvgs()
 	}, [bookName])
-	if(isLoading) return <h1>Loading</h1>
+	if (isLoading) return <h1>Loading</h1>
 	return (
 		<Box sx={{ paddingTop: '5rem' }}>
 			<Button
@@ -68,27 +69,27 @@ const DemoBook = ({ currentColor, bookName }) => {
 				width={100}
 				size='stretch'
 			>
-				{svgsRef.current.map((page) => 
-					{
-					
+				{svgsRef.current.map((page) => {
+
 					return (
-					<Box
-						key={page.path}
-						data-density="soft"
-					>
-						<SVG
-							text={page.text}
-							pageClass={page.className}
-							bookName={bookName}
-							name={page.path.slice(2).slice(0, -4)}
-							currentColor={currentColor}
-						/>
-					</Box>
-					)}
+						<Box
+							key={page.path}
+							data-density="soft"
+						>
+							<SVG
+								text={page.text}
+								pageClass={page.className}
+								bookName={bookName}
+								name={page.path.slice(2).slice(0, -4)}
+								currentColor={currentColor}
+							/>
+						</Box>
+					)
+				}
 				)}
 			</HTMLFlipBook>
 			<Box className="SVG-save">
-			{user ? <Button  onClick={postColorings} sx={{marginTop:"4rem"}} variant="contained">Save Book</Button> : null}
+				{user ? <Button onClick={postColorings} sx={{ marginTop: "4rem" }} variant="contained">Save Book</Button> : null}
 			</Box>
 		</Box>
 	);

@@ -1,40 +1,38 @@
 import './App.css';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { Modal } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
-import CheckForLSColorings  from './helpers/localStorage'
 import 'react-toastify/dist/ReactToastify.css';
 import LoginForm from './Forms/LoginForm';
 import RegistrationForm from './Forms/RegistrationForm';
 import UserRoutes from './components/UserRoutes';
 import Navbar from './components/Navbar';
 function App() {
-	const [ isOpenLogin, setIsOpenLogin ] = useState(false);
-	const [ isOpenRegister, setIsOpenRegister ] = useState(false);
-	const [isLoading, setLoading] = useState(true)
+	const [isOpenLogin, setIsOpenLogin] = useState(false);
+	const [isOpenRegister, setIsOpenRegister] = useState(false);
 	const dispatch = useDispatch()
-	
+
 	const user = window.localStorage.getItem("user") || null;
-	const id = window.localStorage.getItem("id") || null; 
-	if(user && id) dispatch({type:"GET_USER", username: user, id: id})
+	const id = window.localStorage.getItem("id") || null;
+	if (user && id) dispatch({ type: "GET_USER", username: user, id: id })
 	const toggleLoginModal = () => {
 		setIsOpenLogin((isOpenLogin) => !isOpenLogin);
 	};
 	const toggleRegisterModal = () => {
 		setIsOpenRegister((isOpenRegister) => !isOpenRegister);
 	};
-  const notifyLoginSuccess = (username) => toast.success(`Welcome Back, ${username}!`, {
-    position: toast.POSITION.TOP_CENTER
-  })
-  const notifyLogoutSuccess = () => toast.success("You have successfully logged out", {
-    position: toast.POSITION.TOP_CENTER
-  })
-  const notifyRegisterSuccess = (username) => toast.success(`Welcome, ${username}!`)
+	const notifyLoginSuccess = (username) => toast.success(`Welcome Back, ${username}!`, {
+		position: toast.POSITION.TOP_CENTER
+	})
+	const notifyLogoutSuccess = () => toast.success("You have successfully logged out", {
+		position: toast.POSITION.TOP_CENTER
+	})
+	const notifyRegisterSuccess = (username) => toast.success(`Welcome, ${username}!`)
 	return (
 		<div className="App">
-      <ToastContainer/>
+			<ToastContainer />
 			<Navbar
 				toggleLogin={toggleLoginModal}
 				toggleRegister={toggleRegisterModal}

@@ -36,13 +36,12 @@ class Coloring {
     const results = await db.query(
       `SELECT id, name, image
            FROM colorings
-           WHERE user_id = $1`,
+           WHERE colorings.user_id = $1`,
       [user_id]
     );
+    const coloring = results.rows;
 
-    const coloring = results.rows[0];
-
-    if (!coloring) throw new ExpressError(`No coloring with id: ${user_id}`);
+    if (!coloring) throw new ExpressError(`No colorings`);
 
     return coloring;
   }

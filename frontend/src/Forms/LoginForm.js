@@ -1,4 +1,5 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik';
+import React from 'react';
 import {
 	Card,
 	CardContent,
@@ -12,18 +13,18 @@ import { object, string } from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { getUserFromAPI } from '../actions/actions';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function LoginForm({ toggle, notify }) {
 	const initialValues = {
-		username : '',
-		password : ''
+		username: '',
+		password: ''
 	};
 	const dispatch = useDispatch();
 
 	const notifyError = () =>
 		toast.error('Sorry, incorrect login information', {
-			position : toast.POSITION.TOP_RIGHT
+			position: toast.POSITION.TOP_RIGHT
 		});
 
 	return (
@@ -36,8 +37,8 @@ function LoginForm({ toggle, notify }) {
 					</Typography>
 					<Formik
 						validationSchema={object({
-							username : string().required().min(3).max(15),
-							password : string().required().min(5).max(20)
+							username: string().required().min(3).max(15),
+							password: string().required().min(5).max(20)
 						})}
 						initialValues={initialValues}
 						onSubmit={async (values) => {

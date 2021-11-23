@@ -10,17 +10,22 @@ const RandomText = [
 const PeppaText = [
   "",
   "It was a beautiful, sunny day at the Peppa pig house.",
-  "Peppa: Good morning George. George: Oink Oink. Peppa: I can't wait to go outside and play!",
-  "Mommy pig has just finished making breakfast. Mommy pig: Peppa! George! Time for breakfast!",
-  "While daddy pig reads the morning newspaper. Daddy pig: Mmm, something smells good.",
-  "After breakfast, it was finally time to play. Mommy pig: Uh no, it's raining...",
+  "'Good morning, George', Peppa said. 'Oink, Oink!', replied George. 'I can't wait to go outside and play!', said Peppa.",
+  "Mommy pig has just finished making breakfast. She yelled up to her piglets, 'Peppa! George! Time for breakfast!' ",
+  "While daddy pig reads the morning newspaper. 'Mmm, something smells good.'",
+  "After breakfast, it was finally time to play. 'Oh no, it's raining...', she said.",
   "Good thing Peppa and George LOVE jumping up and down in muddy puddles!",
   "Oh my goodness! Wow! So much mud!. Splish, Splash, Splosh, Splish, Splash. The End.",
 ];
+const GMText = [
+  "", 
+  "",
+  "",
+  ""
+]
 // const className = ((i + 1) % 2 ) === 0 ? "left" : "right"
 
 export function getBooks(bookName) {
-  console.log(bookName);
   if (bookName === "Random") {
     const Randomsvgs = require.context(
       `../assets/images/Random`,
@@ -59,5 +64,23 @@ export function getBooks(bookName) {
       });
     }
     return Peppa;
+  } else if(bookName === "goodnightMoon"){
+    const GMsvgs = require.context(`../assets/images/GoonightMoon`, true, /\.svg$/);
+    const GMArr = GMsvgs.keys().map((path) => ({
+      path,
+      file: GMsvgs(path),
+    }));
+    const GM = [];
+
+    for (let i = 0; i < GMArr.length; i++) {
+      const className = (i + 1) % 2 !== 0 ? "left" : "right";
+      GM.push({
+        path: GMArr[i].path,
+        text: GMText[i],
+        className: className,
+      });
+    }
+    
+    return GM
   }
 }
