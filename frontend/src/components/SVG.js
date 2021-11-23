@@ -6,16 +6,16 @@ import 'external-svg-loader';
 import '../styles/SVG.css';
 const SVG = ({
 	name,
-	currentColor, 
-	bookName, 
-	text, 
+	currentColor,
+	bookName,
+	text,
 	pageClass
 }) => {
 	const dispatch = useDispatch()
 	const svgRef = useRef(null);
 	const filename = 'mycreation.svg';
 	const ImportedIconRef = useRef(null);
-	const [ loading, setLoading ] = useState(false);
+	const [loading, setLoading] = useState(false);
 	const colorings = useSelector(store => store.coloringReducer)
 	useEffect(
 		() => {
@@ -31,40 +31,40 @@ const SVG = ({
 			};
 			importIcon();
 		},
-		[ bookName, name ]
+		[bookName, name]
 	);
 	const handleClick = (e) => {
-		
+
 		e.target.style.fill = currentColor;
 		const coloring = e.target.closest("svg").outerHTML
-		dispatch({type:"ADD_COLORING_TO_STATE", coloring:coloring, name: name  })
+		dispatch({ type: "ADD_COLORING_TO_STATE", coloring: coloring, name: name })
 	};
 
 	if (!loading && ImportedIconRef.current) {
 		return ImportedIconRef.current ? (
 			<>
-			<Box className={`SVG-${pageClass}`} >
-				<svg
-					onClick={handleClick}
-					ref={svgRef}
-					id="my-svg"
-					className="SVG"
-					data-src={`${ImportedIconRef.current}`}
-					width="90%"
-					height="90%"
-				/>
-				<p className="SVG-text">{text}</p>
-			</Box>
-			<Box sx={{display:"flex", justifyContent:"space-evenly"}}>
-				<Button
-					variant="contained"
-					onClick={() =>
-						saveSvgAsPng.saveSvg(svgRef.current, filename)}
-				>
-				Download
-				</Button>
-			</Box>
-					</>
+				<Box className={`SVG-${pageClass}`} >
+					<svg
+						onClick={handleClick}
+						ref={svgRef}
+						id="my-svg"
+						className="SVG"
+						data-src={`${ImportedIconRef.current}`}
+						width="90%"
+						height="90%"
+					/>
+					<p className="SVG-text">{text}</p>
+				</Box>
+				<Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+					<Button
+						variant="contained"
+						onClick={() =>
+							saveSvgAsPng.saveSvg(svgRef.current, filename)}
+					>
+						Download
+					</Button>
+				</Box>
+			</>
 		) : null;
 	}
 	return null;

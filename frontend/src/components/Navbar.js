@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import '../styles/Navbar.css';
 import { Box, Typography, AppBar, Toolbar } from '@mui/material';
@@ -31,8 +32,8 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 			<Typography onClick={logout} sx={{ marginRight: '1rem' }} className="Navbar-link">
 				Logout
 			</Typography>
-			<Typography className="Navbar-link" sx={{ marginRight: '1rem' }} onClick={()=> navigate('/color')} >Coloring Page</Typography>
-			<Typography onClick={()=> navigate('/my-pictures')} className="Navbar-link">My Pictures</Typography>
+			<Typography className="Navbar-link" sx={{ marginRight: '1rem' }} onClick={() => navigate('/color')} >Coloring Page</Typography>
+			<Typography onClick={() => navigate('/my-pictures')} className="Navbar-link">My Pictures</Typography>
 		</Box>
 	);
 	return (
@@ -46,7 +47,7 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 						variant="h6"
 						component="div"
 					>
-						<img className="Navbar-logo" src={logo} /> 
+						<img className="Navbar-logo" src={logo} />
 					</Typography>
 					{user ? logoutButtons : loginButtons}
 				</Toolbar>

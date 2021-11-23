@@ -1,4 +1,5 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik';
+import React from 'react';
 import {
 	Card,
 	CardContent,
@@ -17,17 +18,17 @@ import { useDispatch } from 'react-redux';
 
 function RegistrationForm({ toggle, notify }) {
 	const initialValues = {
-		username : '',
-		password : ''
+		username: '',
+		password: ''
 	};
 	const dispatch = useDispatch();
 
 	const navigate = useNavigate();
 	const notifyError = () =>
 		toast.error('Sorry, username already taken', {
-			position : toast.POSITION.TOP_RIGHT
+			position: toast.POSITION.TOP_RIGHT
 		});
-	
+
 
 	return (
 		<div style={{ textAlign: 'center' }}>
@@ -39,8 +40,8 @@ function RegistrationForm({ toggle, notify }) {
 					</Typography>
 					<Formik
 						validationSchema={object({
-							username : string().required().min(3).max(15),
-							password : string().required().min(5).max(20)
+							username: string().required().min(3).max(15),
+							password: string().required().min(5).max(20)
 						})}
 						initialValues={initialValues}
 						onSubmit={async (values) => {
@@ -48,12 +49,12 @@ function RegistrationForm({ toggle, notify }) {
 								let res = await dispatch(registerUser(values));
 								if (res.username) {
 									toggle();
-                                    notify(res.username)
-                                    navigate("/color")
-									
+									notify(res.username)
+									navigate("/color")
+
 								}
 							} catch (err) {
-								console.log("*******",err);
+								console.log("*******", err);
 								notifyError();
 							}
 						}}

@@ -1,4 +1,5 @@
 import { Paper, Box, Typography, Button } from "@mui/material";
+import React from 'react';
 import { useNavigate } from "react-router";
 import '../styles/LandingPage.css'
 export default function LandingPage() {
