@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/MyPictures.css';
 import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
@@ -12,8 +13,8 @@ export default function MyPictures() {
 	const userId = useSelector((store) => store.userReducer.id);
 	const svgs = useRef(null);
 	const navigate = useNavigate();
-	const [ isLoading, setLoading ] = useState(true);
-	const [ colorings, setColorings ] = useState(null);
+	const [isLoading, setLoading] = useState(true);
+	const [colorings, setColorings] = useState(null);
 	useEffect(
 		() => {
 			const getColorings = async () => {
@@ -34,7 +35,7 @@ export default function MyPictures() {
 			};
 			getColorings();
 		},
-		[ userId, isLoading ]
+		[userId, isLoading]
 	);
 
 	const handleClick = (e) => {

@@ -1,3 +1,4 @@
+import React from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { Box, Button } from '@mui/material';
 import SVG from './SVG';
