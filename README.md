@@ -181,9 +181,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Matthew Dillon - [@coderdill](https://twitter.com/coderdill) - mddillon47@yahoo.com
+John Quattrocchi Jr - [@jquatjr](https://twitter.com/johnqtd) - jquatjr@gmail.com
 
-Project Link: [https://github.com/CoderDill/Mintbean](https://github.com/CoderDill/Mintbean)
+Project Link: [https://github.com/CoderDill/Mintbean](https://github.com/jquatjr/Mintbean)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -193,7 +193,7 @@ Project Link: [https://github.com/CoderDill/Mintbean](https://github.com/CoderDi
 ## Acknowledgments
 
 * [William Sanders](https://www.linkedin.com/in/williamsanders81/)
-* [John Quattrocchi](https://www.linkedin.com/in/jquatjr/)
+* [Matthew Dillon](https://www.linkedin.com/in/coderdill/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
