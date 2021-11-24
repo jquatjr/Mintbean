@@ -142,9 +142,11 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 ![ColorPage!](/images/storypaint.png "Color Page")
 
+<div>
 <img src="./images/octopus.png" alt="Octopus" width="400px"/>
+<img src="./images/elephant_colored.png" alt="Elephant" width="400px"/>
+</div>
 
-![Elephant!](/images/elephant_colored.png "Elephant")
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
