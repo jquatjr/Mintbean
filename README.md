@@ -138,11 +138,11 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 #### Examples
 
-![LandingPage!](/images/storypaintLP.png "Landing Page")
+![LandingPage!](/images/storypaintexample.png "Landing Page")
 
 ![ColorPage!](/images/storypaint.png "Color Page")
 
-![Elephant!](/images/octopus.png "Octopus")
+<img src="./images/octopus.png" alt="Octopus" width="400px"/>
 
 ![Elephant!](/images/elephant_colored.png "Elephant")
 
