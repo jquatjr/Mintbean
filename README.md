@@ -31,8 +31,6 @@
     <img src="./frontend/src/assets/images/StoryPaint2.png" alt="Logo" width="200">
   </a>
 
-<h3 align="center">StoryPaint</h3>
-
   <p align="center">
     StoryPaint is a coloring book application.
     <br />
@@ -76,8 +74,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `CoderDill`, `Mintbean`, `coderdill`, `coderdill`, `mddillon47`, `mddillon47@yahoo.com`, `StoryPaint`, `StoryPaint is a coloring book application.`
 
