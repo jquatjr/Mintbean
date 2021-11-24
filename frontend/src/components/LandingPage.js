@@ -95,8 +95,11 @@ export default function LandingPage() {
                     <a href="https://www.facebook.com/coderdill" target="_blank">
                       <i class="fab fa-facebook-square fa-2x me-2"></i>
                     </a>
-                    <a href="https://www.twitter.com/coderdill" target="_blank"><i
-                      class="fab fa-twitter-square fa-2x me-2"></i>
+                    <a href="https://www.twitter.com/coderdill" target="_blank">
+                      <i class="fab fa-twitter-square fa-2x me-2"></i>
+                    </a>
+                    <a href="https://www.coderdill.com/" target="_blank">
+                      <i class="fas fa-globe fa-2x"></i>
                     </a>
                   </span>
                 </div>
@@ -123,7 +126,7 @@ export default function LandingPage() {
                       <i class="fab fa-github fa-2x me-2"></i>
                     </a>
                     <a href="https://willsanders.dev/" target="_blank">
-                      <i class="fas fa-globe fa-2x me-2"></i>
+                      <i class="fas fa-globe fa-2x"></i>
                     </a>
                   </span>
                 </div>
