@@ -43,7 +43,7 @@ export default function LandingPage() {
                 <img src={Elephant} alt="ElephantExample" id="example2" class="img-thumbnail img-fluid" />
               </div>
               <div class="col-md-6 col-12 d-flex justify-content-center">
-                <img src={Peppa} alt="" id="example2" class="img-thumbnail" />
+                <img src={Peppa} alt="" id="example2" class="img-thumbnail img-fluid" />
               </div>
             </div>
           </div>
