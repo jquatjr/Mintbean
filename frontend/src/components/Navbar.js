@@ -38,7 +38,7 @@ export default function Navbar({ toggleLogin, toggleRegister, notify }) {
 	);
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar className="Navbar" position="static">
+			<AppBar className="Navbar" position="-webkit-sticky">
 				<Toolbar>
 					<Typography
 						className="Navbar-link"
